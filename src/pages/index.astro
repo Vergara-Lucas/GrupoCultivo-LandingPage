@@ -1,0 +1,615 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+
+const calendlyUrl = "https://calendly.com/nexag/grupo-cultivo";
+const contactEmail = "lukassvergara@gmail.com";
+---
+
+<Layout>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#inicio">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Grupo Cultivo</span>
+      </a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#producto">Producto</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#agenda">Agendar</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+        Agendar reunión
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-media" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=2000&q=80"
+          alt=""
+          width="2000"
+          height="1333"
+        />
+        <div class="hero-scrim"></div>
+      </div>
+      <div class="container hero-content">
+        <p class="kicker">Grupo Cultivo</p>
+        <h1>El control de tu cultivo, en tiempo real</h1>
+        <p class="hero-lead">
+          Monitoreá sensores, recibí alertas y operá tu carpa desde un panel pensado para productores
+          que necesitan decisiones claras, no ruido.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#agenda">Agendar una reunión</a>
+          <a class="btn btn-ghost" href="#contacto">Escribinos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="producto">
+      <div class="container">
+        <p class="kicker reveal">Producto</p>
+        <h2 class="section-title reveal">CultivoApp: visión operativa de tu carpa</h2>
+        <p class="section-lead reveal">
+          Una plataforma IoT para cultivo indoor e invernaderos: métricas en vivo, rangos de seguridad
+          y control de dispositivos en un mismo lugar.
+        </p>
+
+        <div class="feature-grid">
+          <article class="feature reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 14.76V5a2 2 0 1 0-4 0v9.76a4 4 0 1 0 4 0z" /></svg>
+            </div>
+            <h3>Métricas en vivo</h3>
+            <p>Temperatura, humedad, VPD, pH y EC con estado en rango para actuar a tiempo.</p>
+          </article>
+          <article class="feature reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3v10"/><path d="M8 8c0 4 4 5 4 9a4 4 0 0 0 8 0c0-4-4-5-4-9"/><path d="M9 21h6"/></svg>
+            </div>
+            <h3>Control de dispositivos</h3>
+            <p>LED, extractores y riego en un panel simple, listo para operar en el día a día.</p>
+          </article>
+          <article class="feature reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+            </div>
+            <h3>Historial accionable</h3>
+            <p>Seguí la evolución de tu cultivo y cruzá lecturas para mejorar cada ciclo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="como-funciona">
+      <div class="container split">
+        <div class="reveal">
+          <p class="kicker">Cómo funciona</p>
+          <h2 class="section-title">Sensores en la carpa. Decisiones en tu pantalla.</h2>
+          <p class="section-lead">
+            Instalamos o integramos tu hardware, conectamos la telemetría y te dejamos un dashboard
+            listo para monitorear y operar.
+          </p>
+          <ol class="steps">
+            <li><strong>Conectamos</strong> sensores y actuadores a tu entorno.</li>
+            <li><strong>Centralizamos</strong> las lecturas en tiempo real.</li>
+            <li><strong>Operás</strong> con alertas, rangos y control desde CultivoApp.</li>
+          </ol>
+        </div>
+        <div class="preview reveal" aria-hidden="true">
+          <div class="preview-top">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="preview-grid">
+            <div class="preview-metric">
+              <small>Temperatura</small>
+              <strong>24.6<span>°C</span></strong>
+              <em>En rango</em>
+            </div>
+            <div class="preview-metric warn">
+              <small>Humedad</small>
+              <strong>68.2<span>%</span></strong>
+              <em>Límite</em>
+            </div>
+            <div class="preview-metric">
+              <small>VPD</small>
+              <strong>1.1<span>kPa</span></strong>
+              <em>En rango</em>
+            </div>
+            <div class="preview-metric">
+              <small>pH</small>
+              <strong>6.2</strong>
+              <em>En rango</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="agenda">
+      <div class="container">
+        <p class="kicker reveal">Agenda</p>
+        <h2 class="section-title reveal">Reservá una reunión con el equipo</h2>
+        <p class="section-lead reveal">
+          Contanos sobre tu cultivo y vemos juntos cómo implementar monitoreo y control con Grupo Cultivo.
+        </p>
+        <div class="calendly-wrap reveal">
+          <div
+            class="calendly-inline-widget"
+            data-url={`${calendlyUrl}?hide_gdpr_banner=1`}
+            style="min-width:320px;height:720px;"
+          ></div>
+        </div>
+        <p class="calendly-fallback muted reveal">
+          Si el calendario no carga,
+          <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">abrilo en Calendly</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contacto">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="kicker">Contacto</p>
+          <h2 class="section-title">Escribinos tu consulta</h2>
+          <p class="section-lead">
+            Respondemos a consultas comerciales, demos y proyectos a medida. Completá el formulario y te
+            contactamos a la brevedad.
+          </p>
+          <ul class="contact-points">
+            <li>Demo del dashboard CultivoApp</li>
+            <li>Integración de sensores y actuadores</li>
+            <li>Acompañamiento de implementación</li>
+          </ul>
+        </div>
+
+        <form
+          class="contact-form reveal"
+          action={`https://formsubmit.co/${contactEmail}`}
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Nueva consulta — Grupo Cultivo" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_next" value="/gracias" />
+
+          <label>
+            Nombre
+            <input type="text" name="name" required placeholder="Tu nombre" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="tu@email.com" />
+          </label>
+          <label>
+            Empresa / cultivo
+            <input type="text" name="company" placeholder="Opcional" />
+          </label>
+          <label>
+            Mensaje
+            <textarea name="message" rows="5" required placeholder="¿En qué podemos ayudarte?"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Enviar consulta</button>
+          <p class="form-note muted">Te respondemos al email que indiques.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Grupo Cultivo</strong>
+        <p class="muted">Monitoreo IoT para cultivos que necesitan precisión.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#producto">Producto</a>
+        <a href="#agenda">Agendar</a>
+        <a href="#contacto">Contacto</a>
+        <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">Calendly</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</Layout>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(14px);
+    background: rgba(7, 20, 15, 0.72);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.2rem;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+
+  .logo-mark {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, #6fbf8a, #3d9b63 70%);
+    box-shadow: 0 0 0 4px rgba(111, 191, 138, 0.15);
+  }
+
+  .nav-links {
+    display: none;
+    gap: 1.25rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  @media (min-width: 860px) {
+    .nav-links,
+    .nav-cta {
+      display: inline-flex;
+    }
+  }
+
+  .hero {
+    position: relative;
+    min-height: min(92vh, 860px);
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+  }
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+    animation: heroDrift 18s ease-in-out infinite alternate;
+  }
+
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(7, 20, 15, 0.35) 0%, rgba(7, 20, 15, 0.72) 48%, rgba(7, 20, 15, 0.96) 100%),
+      radial-gradient(700px 360px at 20% 20%, rgba(61, 155, 99, 0.28), transparent 60%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 7rem 0 4.5rem;
+    max-width: 44rem;
+    animation: heroIn 0.9s ease both;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .hero-lead {
+    color: #c6dcd0;
+    font-size: 1.08rem;
+    max-width: 34rem;
+    margin: 0 0 1.6rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .feature-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 800px) {
+    .feature-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .feature {
+    border: 1px solid var(--stroke);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+    border-radius: var(--radius);
+    padding: 1.35rem 1.2rem 1.4rem;
+    box-shadow: var(--shadow);
+  }
+
+  .feature h3 {
+    font-size: 1.15rem;
+    margin: 0.85rem 0 0.45rem;
+  }
+
+  .feature p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .feature-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.7rem;
+    display: grid;
+    place-items: center;
+    background: rgba(111, 191, 138, 0.12);
+    color: var(--accent);
+  }
+
+  .feature-icon svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .section-alt {
+    background: rgba(0, 0, 0, 0.18);
+    border-block: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .split {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .split {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+    }
+  }
+
+  .steps {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .steps strong {
+    color: var(--text);
+  }
+
+  .preview {
+    border: 1px solid var(--stroke);
+    border-radius: 1.25rem;
+    background: linear-gradient(165deg, rgba(13, 34, 25, 0.95), rgba(7, 20, 15, 0.92));
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .preview-top {
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--stroke);
+  }
+
+  .preview-top span {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: #355445;
+  }
+
+  .preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .preview-metric {
+    border: 1px solid var(--stroke);
+    border-radius: 0.9rem;
+    padding: 0.9rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .preview-metric small {
+    display: block;
+    color: var(--muted);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+
+  .preview-metric strong {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+  }
+
+  .preview-metric span {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-left: 0.15rem;
+  }
+
+  .preview-metric em {
+    display: inline-block;
+    margin-top: 0.45rem;
+    font-style: normal;
+    font-size: 0.72rem;
+    color: #b9e4c8;
+  }
+
+  .preview-metric.warn em {
+    color: #f0d59a;
+  }
+
+  .calendly-wrap {
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: var(--shadow);
+  }
+
+  .calendly-fallback {
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .calendly-fallback a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .contact-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 3rem;
+      align-items: start;
+    }
+  }
+
+  .contact-points {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .contact-form {
+    border: 1px solid var(--stroke);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.35rem;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .contact-form label {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid var(--stroke);
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--text);
+    padding: 0.75rem 0.85rem;
+    font: inherit;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: rgba(111, 191, 138, 0.55);
+    box-shadow: 0 0 0 0.2rem rgba(111, 191, 138, 0.18);
+  }
+
+  .form-note {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 2rem 0 2.5rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .footer p {
+    margin: 0.35rem 0 0;
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  @keyframes heroDrift {
+    from {
+      transform: scale(1.04) translateY(0);
+    }
+    to {
+      transform: scale(1.08) translateY(-1.5%);
+    }
+  }
+
+  @keyframes heroIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+---
+
+<Layout title="Consulta enviada — Grupo Cultivo">
+  <main class="thanks">
+    <div class="container thanks-card">
+      <p class="kicker">Grupo Cultivo</p>
+      <h1>Recibimos tu consulta</h1>
+      <p class="muted">
+        Gracias por escribirnos. Te vamos a responder a la brevedad al email que indicaste.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Volver al inicio</a>
+        <a
+          class="btn btn-ghost"
+          href="https://calendly.com/nexag/grupo-cultivo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Agendar reunión
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .thanks {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem 0;
+  }
+
+  .thanks-card {
+    width: min(560px, calc(100% - 2rem));
+    border: 1px solid var(--stroke);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+</style>
