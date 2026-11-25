@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
 const calendlyUrl = "https://calendly.com/nexag/grupo-cultivo";
+const appUrl = "https://app.grupocultivo.tech/";
 const contactEmail = "lukassvergara@gmail.com";
 ---
 
@@ -19,9 +20,14 @@ const contactEmail = "lukassvergara@gmail.com";
         <a href="#agenda">Agendar</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a class="btn btn-primary nav-cta" href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-        Agendar reunión
-      </a>
+      <div class="nav-actions">
+        <a class="btn btn-ghost nav-cta" href={appUrl}>
+          Iniciar sesión
+        </a>
+        <a class="btn btn-primary nav-cta" href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+          Agendar reunión
+        </a>
+      </div>
     </div>
   </header>
 
@@ -45,7 +51,7 @@ const contactEmail = "lukassvergara@gmail.com";
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#agenda">Agendar una reunión</a>
-          <a class="btn btn-ghost" href="#contacto">Escribinos</a>
+          <a class="btn btn-ghost" href={appUrl}>Iniciar sesión</a>
         </div>
       </div>
     </section>
@@ -266,14 +272,26 @@ const contactEmail = "lukassvergara@gmail.com";
     color: var(--text);
   }
 
-  .nav-cta {
-    display: none;
+  .nav-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  .nav-actions .btn {
+    padding: 0.65rem 0.95rem;
+    font-size: 0.85rem;
   }
 
   @media (min-width: 860px) {
-    .nav-links,
-    .nav-cta {
+    .nav-links {
       display: inline-flex;
+    }
+
+    .nav-actions .btn {
+      padding: 0.85rem 1.35rem;
+      font-size: 0.95rem;
     }
   }
 
